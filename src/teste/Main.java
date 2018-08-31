@@ -14,14 +14,14 @@ public class Main {
 	// Interface de acesso aos end points
 	interface Myinterface {
 		@SuppressWarnings("rawtypes")
-		@GET("rest/algumacoisa")
+		@GET("api/v2/pokemon/1/")
 		Call<ResponseBody> Myinterface();
 	}
 
 	public static void main(String[] args) {
 		
 		// Instanciando retrofit
-		final String BASE_URL = "http://ip/minhaaplicacao";
+		final String BASE_URL = "https://pokeapi.co/";
 		@SuppressWarnings("unused")
 		Retrofit retrofit = new Retrofit.Builder()
 		    .baseUrl(BASE_URL)

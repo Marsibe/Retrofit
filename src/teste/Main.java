@@ -11,6 +11,7 @@ import retrofit2.http.GET;
 
 public class Main {
 	
+	// Interface de acesso aos end points
 	interface Myinterface {
 		@SuppressWarnings("rawtypes")
 		@GET("rest/algumacoisa")
@@ -19,7 +20,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		
+		// Instanciando retrofit
 		final String BASE_URL = "http://ip/minhaaplicacao";
 		@SuppressWarnings("unused")
 		Retrofit retrofit = new Retrofit.Builder()
@@ -27,7 +28,7 @@ public class Main {
 		    .addConverterFactory(GsonConverterFactory.create())
 		    .build();
 		
-		
+		// Chamando interface de acesso
 		Myinterface myinterface = retrofit.create(Myinterface.class);
 		
 		try {
